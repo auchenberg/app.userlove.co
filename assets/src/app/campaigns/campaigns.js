@@ -11,7 +11,12 @@ angular.module('userlove.campaigns', [])
 			url: '/new',
 			controller: 'NewCampaignCtrl',
 			templateUrl: 'campaigns/new.tpl.html'
-		});
+		})
+		.state('campagins.show', {
+			url: '/:id',
+			controller: 'ShowCampaignCtrl',
+			templateUrl: 'campaigns/show.tpl.html'
+		});		
 })
 
 .controller('CampaignsCtrl', function MessagesController( $state, $scope, $sails, lodash, config, titleService, CampaignModel ) {
@@ -61,5 +66,20 @@ angular.module('userlove.campaigns', [])
 		});
 	};
 
+})
 
-});
+.controller('ShowCampaignCtrl', function MessagesController( $state, $stateParams, $scope, $sails, config, titleService, CampaignModel ) {
+	
+	$scope.currentUser = config.currentUser;
+
+	CampaignModel.getOne($stateParams.id).then(function(model) {
+		$scope.campaign = model;
+
+		$scope.embedCode = '<iframe src="https://app.userlove.co/embeds/campaign/' + $scope.campaign.id + '/" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:30px;" allowTransparency="true"></iframe>'
+
+	    titleService.setTitle($scope.campaign.title);
+
+	});
+
+
+})
