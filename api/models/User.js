@@ -18,9 +18,9 @@ module.exports = {
 		message_count: {
 			type: 'number'
 		},
-		// A User can have many messages
-		messages: {
-			collection: 'message',
+		// A User can have many campaigns
+		campaigns: {
+			collection: 'Campaign',
 			via: 'user'
 		},
 		passports : { 

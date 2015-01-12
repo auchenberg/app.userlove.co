@@ -1,9 +1,9 @@
-angular.module('models.message', ['lodash', 'services', 'ngSails',])
+angular.module('models.campaign', ['lodash', 'services', 'ngSails',])
 
-.service('MessageModel', function($q, lodash, utils, $sails) {
+.service('CampaignModel', function($q, lodash, utils, $sails) {
 	this.getAll = function() {
 		var deferred = $q.defer();
-		var url = utils.prepareUrl('message');
+		var url = utils.prepareUrl('campaign');
 
 		$sails.get(url, function(models) {
 			return deferred.resolve(models);
@@ -14,7 +14,7 @@ angular.module('models.message', ['lodash', 'services', 'ngSails',])
 
 	this.create = function(newModel) {
 		var deferred = $q.defer();
-		var url = utils.prepareUrl('message');
+		var url = utils.prepareUrl('campaign');
 
 		$sails.post(url, newModel, function(model) {
 			return deferred.resolve(model);
@@ -25,7 +25,7 @@ angular.module('models.message', ['lodash', 'services', 'ngSails',])
 
 	this.delete = function(model) {
 		var deferred = $q.defer();
-		var url = utils.prepareUrl('message/' + model.id);
+		var url = utils.prepareUrl('campaign/' + model.id);
 
 		$sails.delete(url, function(model) {
 			return deferred.resolve(model);

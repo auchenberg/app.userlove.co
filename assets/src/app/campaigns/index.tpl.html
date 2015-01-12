@@ -1,0 +1,15 @@
+<section class="campaigns" ui-view>
+	<h1>Campaigns</h1>
+
+	<a href="/campaigns/new" class="btn pull-right">New Campaign</a>
+
+	<div class="row" >
+
+		<ul>
+			<li ng-repeat="campaign in campaigns">
+				{{campaign.title}} 
+				{{campaign.url}} 
+			</li>
+		</ul>
+	</div>
+</section>

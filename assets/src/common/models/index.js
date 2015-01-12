@@ -1,4 +1,4 @@
 angular.module('models', [
-	'models.message',
+	'models.campaign',
 	'models.user'
 ]);

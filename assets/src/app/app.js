@@ -1,30 +1,26 @@
-angular.module( 'sailng', [
+angular.module('userlove', [
 	'ui.router',
 	'ngSails',
-	'angularMoment',
 	'lodash',
 	'angularMoment',
 	'ui.bootstrap',
 	'templates-app',
 	'services',
 	'models',
-
-	'sailng.header',
+	'userlove.header',
+	'userlove.about',
 	'userlove.dashboard',
-	'sailng.about',
-	'sailng.messages'
+	'userlove.campaigns',
 ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
-
-
+.config(function($stateProvider, $urlRouterProvider, $locationProvider ) {
 	$locationProvider.html5Mode(true);
 })
 
-.run( function run () {
+.run(function() {
 	moment.lang('en');
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, config ) {
+.controller('AppCtrl', function($scope, config ) {
 	config.currentUser = window.currentUser;
 });

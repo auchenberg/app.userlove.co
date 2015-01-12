@@ -1,11 +1,11 @@
-angular.module( 'sailng.header', [
+angular.module('userlove.header', [
 ])
 
 .controller( 'HeaderCtrl', function HeaderController( $scope, $state, config ) {
     $scope.currentUser = config.currentUser;
 
     var navItems = [
-        {title: 'Campaigns', translationKey: 'navigation:campaigns', url: '/messages', iconClass: 'fa fa-comments'},
+        {title: 'Campaigns', translationKey: 'navigation:campaigns', url: '/campaigns', iconClass: 'fa fa-comments'},
     ];
 
     var rightItems = [];

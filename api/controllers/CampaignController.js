@@ -1,11 +1,12 @@
 var _ = require('lodash');
 
 module.exports = {
+
 	getAll: function(req, res) {
-		Message.getAll()
+		Campaign.getAll()
 		.spread(function(models) {
-			Message.watch(req);
-			Message.subscribe(req.socket, models);
+			Campaign.watch(req);
+			Campaign.subscribe(req.socket, models);
 
 			res.json(models);
 		})
@@ -15,9 +16,9 @@ module.exports = {
 	},
 
 	getOne: function(req, res) {
-		Message.getOne(req.param('id'))
+		Campaign.getOne(req.param('id'))
 		.spread(function(model) {
-			Message.subscribe(req.socket, model);
+			Campaign.subscribe(req.socket, model);
 			res.json(model);
 		})
 		.fail(function(err) {
@@ -26,20 +27,21 @@ module.exports = {
 	},
 
 	create: function (req, res) {
-		var userId = req.param('user');
+
 		var model = {
 			title: req.param('title'),
-			user: userId
+			url: req.param('url'),
+			user: req.param('user')
 		};
 
-		Message.create(model)
-		.exec(function(err, message) {
+		Campaign.create(model)
+		.exec(function(err, campaign) {
 			if (err) {
-				return console.log(err);
+				return res.serverError(err);
 			}
 			else {
-				Message.publishCreate(message);
-				res.json(message);
+				Campaign.publishCreate(campaign);
+				res.json(campaign);
 			}
 		});
 	},
@@ -51,7 +53,7 @@ module.exports = {
 		}
 
 		// Otherwise, find and destroy the model in question
-		Message.findOne(id).exec(function(err, model) {
+		Campaign.findOne(id).exec(function(err, model) {
 			if (err) {
 				return res.serverError(err);
 			}
@@ -59,12 +61,12 @@ module.exports = {
 				return res.notFound();
 			}
 
-			Message.destroy(id, function(err) {
+			Campaign.destroy(id, function(err) {
 				if (err) {
 					return res.serverError(err);
 				}
 
-				Message.publishDestroy(model.id);
+				Campaign.publishDestroy(model.id);
 				return res.json(model);
 			});
 		});
