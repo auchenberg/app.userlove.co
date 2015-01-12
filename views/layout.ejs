@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="sailng" ng-controller="AppCtrl">
+  <head>
+    <title><%- title %></title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.png" sizes="16x16 32x32 64x64"/>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/importer.css">
+  </head>
+
+  <body>
+    <%- body %>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/socket.io-client/dist/socket.io.min.js"></script>
+    <script src="/bower_components/sails.io.js/dist/sails.io.js"></script>
+    <script src="/bower_components/angular-sails/dist/angular-sails.js"></script>
+    <script src="/bower_components/lodash/dist/lodash.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular-moment/angular-moment.js"></script>
+    <script src="/bower_components/angular-translate/angular-translate.js"></script>
+    <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="/src/app/about/index.js"></script>
+    <script src="/src/app/app.js"></script>
+    <script src="/src/app/header/index.js"></script>
+    <script src="/src/app/dashboard/index.js"></script>
+    <script src="/src/app/messages/index.js"></script>
+    <script src="/src/common/models/Message.js"></script>
+    <script src="/src/common/models/User.js"></script>
+    <script src="/src/common/models/index.js"></script>
+    <script src="/src/common/services/config.js"></script>
+    <script src="/src/common/services/index.js"></script>
+    <script src="/src/common/services/lodash.js"></script>
+    <script src="/src/common/services/title.js"></script>
+    <script src="/src/common/services/utils.js"></script>
+
+    <script type="text/javascript" src="/templates.js"></script>
+
+  </body>
+</html>

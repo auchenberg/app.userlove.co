@@ -1,0 +1,39 @@
+<div class="login">
+    <div class="align-middle-box">
+        <div class="inner">
+            <img src="/images/logo.png" class="page-logo" />
+            <h1 class="align-center">Great, almost there!</h1>
+            
+            <div class="box">
+                <form role="form" action="/auth/local/register" method="post">
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                    
+                    <div class="form-group">
+                        <label for="inputFirstName" class="control-label">Your first name</label>
+                        <input type="text" class="form-control" id="inputFirstName" name="first_name" placeholder="First Name" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputFullName" class="control-label">Your last name</label>
+                        <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Last Name" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="control-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Email" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword3" class="control-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-submit">Let's get started</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
