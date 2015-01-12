@@ -4,7 +4,7 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#documentation
  */
-module.exports.express = {
+module.exports.http = {
 
 	// Completely override Express middleware loading.  
 	// If you only want to override the bodyParser, cookieParser
