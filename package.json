@@ -1,9 +1,7 @@
 {
-  "name": "Sailng",
+  "name": "UserLove",
   "private": true,
-  "version": "0.2.0",
-  "description": "a Sails + Angular boilerplate application",
-  "keywords": [],
+  "version": "0.1.0",
   "dependencies": {
     "bcrypt": "~0.7.8",
     "ejs": "~0.8.4",
@@ -30,20 +28,12 @@
     "passport-local": "~1.0.0",
     "rc": "~0.3.3",
     "sails": "~0.10.0-rc7",
-    "sails-disk": "~0.10.0",
     "sails-generate-auth": "~0.1.4",
     "sails-postgresql": "^0.10.11",
     "validator": "~3.12.0"
   },
   "scripts": {
-    "start": "node app.js",
-    "debug": "node debug app.js"
+    "start": "sails lift"
   },
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ryancp/sailng.git"
-  },
-  "author": "Ryan Pharis, @ryancp",
-  "license": "MIT"
+  "main": "app.js"
 }
