@@ -15,7 +15,7 @@ var bcrypt = require('bcrypt');
  * the user, but not the authentication data, to and from the session.
  */
 var Passport = {
-
+  tableName: "passports",
   attributes: {
 
     // Required field: Protocol

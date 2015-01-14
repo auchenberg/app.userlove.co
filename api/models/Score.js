@@ -1,4 +1,5 @@
 module.exports = {
+	tableName: "scores",
 	attributes: {
 		value: {
 			type: 'string',

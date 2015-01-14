@@ -1,6 +1,7 @@
 var hat = require('hat');
 
 module.exports = {
+	tableName: "campagins",
 	attributes: {
 		title: {
 			type: 'string',
