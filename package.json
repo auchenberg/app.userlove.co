@@ -2,6 +2,9 @@
   "name": "UserLove",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "node": "0.10.x"
+  },  
   "dependencies": {
     "bcrypt": "~0.7.8",
     "ejs": "~0.8.4",
