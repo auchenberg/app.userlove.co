@@ -1,0 +1,13 @@
+
+<% if (campaign !== undefined) { %>
+<script>
+	window.campaign = {
+		title: '<%= campaign.title %>',
+		embed_token: '<%= campaign.embed_token %>',
+	};
+</script>
+<% } %>
+
+<div class="embed-container" ui-view>
+	<nps></nps>
+</div>

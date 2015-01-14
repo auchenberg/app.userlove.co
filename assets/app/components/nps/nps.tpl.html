@@ -1,0 +1,41 @@
+<div>
+    <steps class="nps">
+        <step>
+            <h1>Would you recommend {{campaign.title}}?</h1>
+            <p>How likely are you to recommend us to friends or collegues?</p>
+
+            <ol class="ratings">
+                <li><img src="/images/icon-sadface.svg" width="32" height="32" alt=""></li>
+                <li><span class="number" ng-class="{'selected': score == 0}" ng-click="score = 0">0</span><input type="radio" value="0" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 1}" ng-click="score = 1">1</span><input type="radio" value="1" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 2}" ng-click="score = 2">2</span><input type="radio" value="2" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 3}" ng-click="score = 3">3</span><input type="radio" value="3" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 4}" ng-click="score = 4">4</span><input type="radio" value="4" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 5}" ng-click="score = 5">5</span><input type="radio" value="5" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 6}" ng-click="score = 6">6</span><input type="radio" value="6" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 7}" ng-click="score = 7">7</span><input type="radio" value="7" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 8}" ng-click="score = 8">8</span><input type="radio" value="8" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 9}" ng-click="score = 9">9</span><input type="radio" value="9" ng-model="score"></li>
+                <li><span class="number" ng-class="{'selected': score == 10}"ng-click="score = 10">10</span><input type="radio" value="10" ng-model="score"></li>
+                <li><img src="/images/icon-smiley.svg" width="32" height="32" alt=""></li>
+            </ol>
+
+            <p><textarea ng-model="message" placeholder="Please tell us more about your positive or negative experience"></textarea></p>
+
+            <p>
+                <button class="btn btn-primary btn-small submit pull-right" ng-disabled="!score" ng-click="submit(message, score)">Submit Feedback</button>
+                <a href="#" class="cancel pull-left" ng-click="cancel()">No thanks</a>
+            </p>
+        </step>
+
+        <step name="thankyou">
+            <h1>Thank you!</h1>
+
+            <div class="thankyou"><i class="icon-success"></i></div>
+
+            <p>Your feedback is helping us create a better experience.</p>
+
+            <p><a href="#" ng-click="home()">Home</a></p>
+        </step>
+    </steps>
+</div>

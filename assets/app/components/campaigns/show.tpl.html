@@ -1,0 +1,92 @@
+<section class="campaign-show">
+    <header>
+        <h1>{{campaign.title}}</h1>
+    </header>
+
+    <div class="box col-md-12 clearfix">
+        <div class="col-md-10 score-ranking">
+            <div class="progress" ng-show="npsProgress">
+                
+                <div class="progress-bar progress-bar-success" data-toggle="tooltip" title="{{npsProgress.promoter}}%" style="width: {{npsProgress.promoter}}%;">
+                    <dl>
+                        <dt>{{npsProgress.promoter}}<sup>%</sup></dt>
+                        <dd>PROMOTERS</dd>
+                    </dl>
+                </div>
+                
+                
+                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" title="{{npsProgress.passive}}%" style="width: {{npsProgress.passive}}%;">
+                    <dl>
+                        <dt>{{npsProgress.passive}}<sup>%</sup></dt>
+                        <dd>PASSIVES</dd>
+                    </dl>
+                </div>
+                
+                
+                <div class="progress-bar progress-bar-danger" data-toggle="tooltip" title="{{npsProgress.detractor}}%" style="width: {{npsProgress.detractor}}%;">
+                    <dl>
+                        <dt>{{npsProgress.detractor}}<sup>%</sup></dt>
+                        <dd>DETRACTORS</dd>
+                    </dl>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="col-md-2 nps-score">
+            <dl id="formatted-nps-score">
+                <dt>{{npsScore}}</dt>
+                <dd>NPS</dd>
+            </dl>
+        </div> 
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="box col-md-12">
+            <h3>Score comparison</h3>
+
+        <div class="clearfix report-container score-analysis-container">
+            <div class="col-sm-12 inner score-analysis">
+                <ul class="scale">
+                    <li class="score" style="margin-left:{{ npsScore / 2 }}%"><span>{{npsScore}}</span></li>
+                    <li class="neg-100">-100</li>
+                    <li class="zero">0</li>
+                    <li class="pos-100">100</li>
+                </ul>
+                <ul class="key">
+                    <li class="good"><span>good</span></li>
+                    <li class="excellent"><span>excellent</span></li>
+                    <li class="world"><span>world class</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <div class="box col-md-12">
+        <h3>Latest 100 scores</h3>
+        
+        <ul class="campaign-score-list">
+            <li class="media clearfix" ng-repeat="score in campaign.scores">
+                <span class="score badge media-figure">{{score.value}}</span>
+                <div class="media-body">
+                    <span class="comment">{{score.comment}}</span>
+                </div>
+                <span class="date" am-time-ago="score.createdAt"></span>
+            </li>
+        </ul>
+
+        <a href="#">See all scores</a>
+    </div>
+
+    <div class="clearfix">
+
+    <div class="box col-md-12 clearfix embed-code">
+        <h3>Embed code</h3>
+        <textarea ng-show="embedCode">{{embedCode}}</textarea>
+    </div>    
+
+</section>

@@ -47,8 +47,12 @@ module.exports.routes = {
 
     'get /api/campaign': 'CampaignController.getAll',
     'get /api/campaign/:id': 'CampaignController.getOne',
+    'get /api/campaign/:id/nps': 'CampaignController.getNPS',
     'post /api/campaign': 'CampaignController.create',
     'delete /api/campaign/:id': 'CampaignController.destroy',
+    
+    'get /campaign/embed/:token': 'CampaignEmbedController.show',
+    'post /campaign/embed/:token': 'CampaignEmbed.create',
 
     // If a request to a URL doesn't match any of the custom routes above, it is matched 
     // against Sails route blueprints.  See `config/blueprints.js` for configuration options

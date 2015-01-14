@@ -24,6 +24,18 @@ angular.module('models.campaign', ['lodash', 'services', 'ngSails',])
 		return deferred.promise;
 	};
 
+	this.getNPS = function(id) {
+		var deferred = $q.defer();
+		var url = utils.prepareUrl('campaign/' + id + '/nps');
+
+		$sails.get(url, function(model) {
+			return deferred.resolve(model);
+		});
+
+		return deferred.promise;
+	};
+
+
 	this.create = function(newModel) {
 		var deferred = $q.defer();
 		var url = utils.prepareUrl('campaign');

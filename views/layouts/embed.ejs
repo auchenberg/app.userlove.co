@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/styles/importer.css">
   </head>
 
-  <body>
+  <body class="bg-white">
     <%- body %>
 
     <script src="/bower_components/angular/angular.js"></script>
@@ -23,23 +23,25 @@
     <script src="/bower_components/angular-moment/angular-moment.js"></script>
     <script src="/bower_components/angular-translate/angular-translate.js"></script>
     <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="/bower_components/angular-steps/src/angular-steps.js"></script>
     
-    <script src="/src/app/app.js"></script>
+    <script src="/app/app.js"></script>
 
-    <script src="/src/app/about/index.js"></script>
-    <script src="/src/app/header/index.js"></script>
-    <script src="/src/app/dashboard/index.js"></script>
-    <script src="/src/app/campaigns/campaigns.js"></script>
+    <script src="/app/components/about/index.js"></script>
+    <script src="/app/components/header/index.js"></script>
+    <script src="/app/components/dashboard/index.js"></script>
+    <script src="/app/components/campaigns/campaigns.js"></script>
+    <script src="/app/components/nps/nps.js"></script>
     
-    <script src="/src/common/models/Campaign.js"></script>
-    <script src="/src/common/models/User.js"></script>
-    <script src="/src/common/models/index.js"></script>
+    <script src="/app/models/Campaign.js"></script>
+    <script src="/app/models/User.js"></script>
+    <script src="/app/models/index.js"></script>
 
-    <script src="/src/common/services/config.js"></script>
-    <script src="/src/common/services/index.js"></script>
-    <script src="/src/common/services/lodash.js"></script>
-    <script src="/src/common/services/title.js"></script>
-    <script src="/src/common/services/utils.js"></script>
+    <script src="/app/services/config.js"></script>
+    <script src="/app/services/index.js"></script>
+    <script src="/app/services/lodash.js"></script>
+    <script src="/app/services/title.js"></script>
+    <script src="/app/services/utils.js"></script>
 
     <script type="text/javascript" src="/templates.js"></script>
 

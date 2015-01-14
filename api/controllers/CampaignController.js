@@ -26,6 +26,21 @@ module.exports = {
 		});
 	},
 
+	getNPS: function(req, res) {
+
+		Campaign.calculateNPS(req.param('id')).spread(function(data) {
+			res.json({
+				nps: data.nps,
+				counts: data.counts
+			});
+		})
+		.fail(function(err) {
+			console.error(err);
+			res.json(500, err);
+		});
+
+	},
+
 	create: function (req, res) {
 
 		var model = {

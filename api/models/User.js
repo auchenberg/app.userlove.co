@@ -18,13 +18,13 @@ module.exports = {
 		message_count: {
 			type: 'number'
 		},
-		// A User can have many campaigns
 		campaigns: {
 			collection: 'Campaign',
 			via: 'user'
 		},
 		passports : { 
-			collection: 'Passport', via: 'user' 
+			collection: 'Passport', 
+			via: 'user' 
 		}
 	},
 
