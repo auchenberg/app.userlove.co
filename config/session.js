@@ -33,14 +33,14 @@ module.exports.session = {
   // The following values are optional, if no options are set a redis instance running
   // on localhost is expected.
   // Read more about options at: https://github.com/visionmedia/connect-redis
-  //
-  // host: 'localhost',
-  // port: 6379,
-  // ttl: <redis session TTL in seconds>,
-  // db: 0,
-  // pass: <redis auth password>
-  // prefix: 'sess:'
 
+  adapter: 'redis',
+  host: 'pub-redis-19015.eu-west-1-2.1.ec2.garantiadata.com',
+  port: 19015,
+  ttl: 0,
+  db: 'rediscloud',
+  pass: '0cAqGWv7Y9gsPWqM',
+  prefix: 'sess:'
 
   // Uncomment the following lines to use your Mongo adapter as a session store
   // adapter: 'mongo',
