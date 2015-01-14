@@ -1,7 +1,8 @@
 module.exports = {
 
     models: {
-      connection: 'heroku'
+	    connection: 'heroku',
+      	migrate: 'alter'
     },
 
     port: 80,
