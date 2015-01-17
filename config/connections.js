@@ -18,6 +18,8 @@
  * http://links.sailsjs.org/docs/config/connections
  */
 
+console.log('process.env.MONGOLAB_URI', process.env.MONGOLAB_URI);
+
 module.exports.connections = {
 
   local: {
