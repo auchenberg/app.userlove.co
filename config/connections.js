@@ -22,22 +22,6 @@ console.log('process.env.MONGOLAB_URI', process.env.MONGOLAB_URI);
 
 module.exports.connections = {
 
-  local: {
-    adapter     : 'sails-mongo',
-    host        : '127.0.0.1',
-    user        : '',
-    password    : '',
-    database    : 'userlove',
-    port        : 27017,
-    schema      : true
-  },
-
-  mongolab: {
-    adapter     : 'sails-mongo',
-    url         : process.env.MONGOLAB_URI,
-    schema      : true
-  }
-
 };
 
 
