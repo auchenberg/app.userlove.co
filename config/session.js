@@ -12,24 +12,17 @@
 
 module.exports.session = {
 
-  // Session secret is automatically generated when your new app is created
-  // Replace at your own risk in production-- you will invalidate the cookies of your users,
-  // forcing them to log in again. 
   secret: '999f5ca74a3a804648e7b90d7182f5e9',
 
-
-  // Set the session cookie expire time
-  // The maxAge is set by milliseconds, the example below is for 24 hours
-  //
-  // cookie: {
-  //   maxAge: 24 * 60 * 60 * 1000  
-  // }
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000  
+  },
   
   adapter: 'redis',
   host: process.env.REDIS_HOST,
   port: process.env.REDIS_PORT,
   db: process.env.REDIS_DB,
-  pass: process.env.REDIS_PASSWOR
+  pass: process.env.REDIS_PASS,
   prefix: 'sess:'
 
 };
