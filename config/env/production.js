@@ -1,8 +1,8 @@
 module.exports = {
 
     models: {
-	    connection: 'heroku',
-      	migrate: 'drop'
+	    connection: 'mongolab',
+      	migrate: 'safe'
     },
 
     port: 80,

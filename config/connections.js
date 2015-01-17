@@ -21,21 +21,19 @@
 module.exports.connections = {
 
   local: {
-    adapter   : 'sails-postgresql',
-    host: '127.0.0.1',
-    user: 'auchenberg',
-    password: '',
-    database: 'auchenberg',
-    port: 5432,
-    schema: true
+    adapter     : 'sails-mongo',
+    host        : '127.0.0.1',
+    user        : '',
+    password    : '',
+    database    : 'userlove',
+    port        : 27017,
+    schema      : true
   },
 
-  heroku: {
-    adapter   : 'sails-postgresql',
-    url: process.env.DATABASE_URL,
-    pool: false,
-    ssl: false,
-    schema: true
+  mongolab: {
+    adapter     : 'sails-mongo',
+    url         : process.env.MONGOLAB_URI;
+    schema      : true
   }
 
 };
