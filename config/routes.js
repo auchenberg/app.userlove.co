@@ -47,7 +47,7 @@ module.exports.routes = {
 
     'get /api/campaign': 'CampaignController.getAll',
     'get /api/campaign/:id': 'CampaignController.getOne',
-    'get /api/campaign/:id/nps': 'CampaignController.getNPS',
+    'get /api/campaign/:id/metrics': 'CampaignController.getMetrics',
     'post /api/campaign': 'CampaignController.create',
     'delete /api/campaign/:id': 'CampaignController.destroy',
     

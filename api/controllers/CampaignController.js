@@ -26,7 +26,8 @@ module.exports = {
 		});
 	},
 
-	getNPS: function(req, res) {
+	getMetrics : function(req, res) {
+		// TODO: Check permissions
 
 		Campaign.calculateNPS(req.param('id')).spread(function(data) {
 			res.json({
