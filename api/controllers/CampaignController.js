@@ -3,7 +3,9 @@ var _ = require('lodash');
 module.exports = {
 
 	getAll: function(req, res) {
-		Campaign.getAll()
+		var userId = req.user.id;
+
+		Campaign.getAllByUserId(userId)
 		.spread(function(models) {
 			Campaign.watch(req);
 			Campaign.subscribe(req.socket, models);
@@ -13,9 +15,13 @@ module.exports = {
 		.fail(function(err) {
 			// An error occured
 		});
+
 	},
 
 	getOne: function(req, res) {
+
+		// TODO: Check permissions
+
 		Campaign.getOne(req.param('id'))
 		.spread(function(model) {
 			Campaign.subscribe(req.socket, model);
@@ -63,6 +69,8 @@ module.exports = {
 	},
 
 	destroy: function (req, res) {
+		// TODO: Check permissions
+		
 		var id = req.param('id');
 		if (!id) {
 			return res.badRequest('No id provided.');

@@ -50,6 +50,17 @@ module.exports = {
 		});
 	},
 
+	getAllByUserId: function(userId) {
+		return Campaign.find()
+		.where({ user: userId })
+		// TODO: sort by createdAt DESC does not work here, something to do with a camelCase key names bug
+		.sort({createdAt: 'desc'})
+		.populate('user')
+		.then(function (models) {
+			return [models];
+		});
+	},
+	
 	getOne: function(id) {
 		return Campaign.findOne(id)
 		.populate('user')
