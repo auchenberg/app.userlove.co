@@ -1,4 +1,5 @@
 var bcrypt = require('bcrypt');
+var hat = require('hat');
 
 module.exports = {
 	tableName: "users",
@@ -8,17 +9,25 @@ module.exports = {
 			required: true,
 			unique: true
 		},
-		first_name: {
+		firstName: {
 			type: 'string',
 			required: true
 		},
-		last_name: {
+		lastName: {
 			type: 'string',
 			required: true
 		},		
-		message_count: {
-			type: 'number'
+		activated: {
+      		type: 'boolean',
+      		defaultsTo: false
+    	},
+   		activationToken: {
+      		type: 'string'
 		},
+		resetPassToken: {
+      		type: 'string'
+    	},		
+    	// Collections
 		campaigns: {
 			collection: 'Campaign',
 			via: 'user'
@@ -26,7 +35,7 @@ module.exports = {
 		passports : { 
 			collection: 'Passport', 
 			via: 'user' 
-		}
+		},    	
 	},
 
 	getAll: function() {
@@ -41,5 +50,14 @@ module.exports = {
 		.then(function (model) {
 			return [model];
 		});
-	}
+	},
+
+	// Callbacks
+  	beforeCreate: function(user, cb) {
+    	user.activated = false;
+    	user.activationToken =  hat();
+    	user.resetPassToken = hat();
+
+    	return cb(null, user);
+  	}
 };
