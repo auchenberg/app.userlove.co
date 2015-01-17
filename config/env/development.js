@@ -4,7 +4,7 @@ module.exports = {
 
     models: {
         connection: 'local',
-        migrate: 'alter'
+        migrate: 'safe'
     }
 
 };
