@@ -7,10 +7,6 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
-		url: {
-			type: 'string',
-			required: true
-		},
 		embed_token: {
 			type: 'string',
 		},		
