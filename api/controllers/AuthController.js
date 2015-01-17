@@ -122,11 +122,17 @@ var AuthController = {
    */
   callback: function (req, res) {
     passport.callback(req, res, function (err, user) {
+
+      if (err) {
+          sails.log.error("passport.callback.err:", err);
+          return res.redirect('/login');
+      }
+
       req.login(user, function (err) {
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
         if (err) {
-          sails.log.error("passport.callback.err: " + err);
+          sails.log.error("passport.callback.err:", err);
           res.redirect('/login');
         }
         // Upon successful login, send the user to the homepage were req.user
