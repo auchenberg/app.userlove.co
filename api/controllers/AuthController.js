@@ -68,6 +68,7 @@ var AuthController = {
    */
   logout: function (req, res) {
     req.logout();
+    sails.log.info("controller.auth.logout");
     res.redirect('/');
   },
 
@@ -89,7 +90,7 @@ var AuthController = {
   register: function (req, res) {
     res.view({
       title     : 'Welcome - UserLove',
-      errors: req.flash('error')
+      errors    : req.flash('error')
     });
   },
 
@@ -125,13 +126,13 @@ var AuthController = {
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
         if (err) {
-          console.error('error', err);
+          sails.log.error("passport.callback.err: " + err);
           res.redirect('/login');
         }
         // Upon successful login, send the user to the homepage were req.user
         // will available.
         else {
-        	console.log('currently logged in user is: ' + req.user.username);
+          sails.log.info("controller.auth.login", req.user);
           res.redirect('/');
         }
       });
