@@ -19,7 +19,7 @@ module.exports.policies = {
   '*': [ 'passport' ],
 
   HomeController : {
-	'*': ['passport', 'isLoggedIn']
+	'*': ['passport', 'authenticated']
   }
 
 };
