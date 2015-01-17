@@ -7,6 +7,6 @@
  */
 
 module.exports.models = {
-  	connection: 'local',
- 	migrate: 'safe'
+  	
+  	
 };
