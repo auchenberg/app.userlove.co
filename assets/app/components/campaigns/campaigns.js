@@ -65,11 +65,16 @@ campaigns.controller('ShowCampaignCtrl', function MessagesController( $state, $s
 
 	CampaignModel.getOne($stateParams.id).then(function(model) {
 		$scope.campaign = model;
+		
+		var url = 'https://' + window.location.host + '/campaign/embed/' + $scope.campaign.embed_token;
 
-		$scope.embedCode = '<iframe src="http://dev.userlove.co:1337/campaign/embed/' + $scope.campaign.embed_token + '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:500px;" allowTransparency="true"></iframe>'
+		$scope.embedCode = '<iframe src="' + url + '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:500px;" allowTransparency="true"></iframe>'
 
-		CampaignModel.getNPS($stateParams.id).then(function(data) {
-			$scope.npsScore = Math.round(data.nps);
+		CampaignModel.getMetrics($stateParams.id).then(function(data) {
+			
+			if(data.nps) {
+				$scope.npsScore = Math.round(data.nps);
+			}
 
 			if(data.counts) {
 				$scope.npsProgress = {
