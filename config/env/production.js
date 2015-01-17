@@ -5,7 +5,7 @@ module.exports = {
       	migrate: 'safe'
     },
 
-    port: 80,
+    port: process.env.PORT || 80,
 
     // log: {
     //   level: "silent"

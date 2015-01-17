@@ -5,6 +5,14 @@ module.exports = {
     models: {
         connection: 'local',
         migrate: 'safe'
+    },
+
+    session: {
+        adapter: 'memory'
+    },
+
+    sockets: {
+        adapter: 'memory'
     }
 
 };
