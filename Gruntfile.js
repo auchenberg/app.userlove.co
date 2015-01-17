@@ -10,7 +10,7 @@
  * WARNING:
  * Unless you know what you're doing, you shouldn't change this file.
  * Check out the `tasks` directory instead.
- */
+ */	
 
 module.exports = function(grunt) {
 
@@ -56,13 +56,12 @@ module.exports = function(grunt) {
 	 */
 	function invokeConfigFn(tasks) {
 		for (var taskName in tasks) {
-			if (tasks.hasOwnProperty(taskName)) {
+			if (tasks.hasOwnProperty(taskName)) {		dev: ['.tmp/public/**'],
+
 				tasks[taskName](grunt);
 			}
 		}
 	}
-
-
 
 
 	// Load task functions
@@ -73,6 +72,8 @@ module.exports = function(grunt) {
 	if (!registerDefinitions.default) {
 		registerDefinitions.default = function (grunt) { grunt.registerTask('default', []); };
 	}
+
+	  console.log(registerDefinitions);
 
 	// Run task functions to configure Grunt.
 	invokeConfigFn(taskConfigurations);
