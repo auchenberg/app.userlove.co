@@ -31,10 +31,9 @@
     "passport": "~0.2.0",
     "passport-local": "~1.0.0",
     "rc": "~0.3.3",
-    "sails": "~0.10.0-rc7",
+    "sails": "~0.10.5",
     "sails-generate-auth": "~0.1.4",
     "sails-mongo": "^0.10.5",
-    "sails-postgresql": "^0.10.11",
     "sails-redis": "^0.10.3",
     "validator": "~3.12.0"
   },
