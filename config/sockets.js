@@ -32,7 +32,7 @@ module.exports.sockets = {
   // The flashsocket transport is disabled by default
   // You can enable flashsockets by adding 'flashsocket' to this list:
   transports: [
-  // 'websocket',
+  'websocket',
   'htmlfile',
   'xhr-polling',
   'jsonp-polling'
@@ -90,7 +90,7 @@ module.exports.sockets = {
   authorization: true,
 
   // Match string representing the origins that are allowed to connect to the Socket.IO server
-  origins: '*:*',
+  // origins: '*:*',
 
   // Should we use heartbeats to check the health of Socket.IO connections?
   heartbeats: true,
